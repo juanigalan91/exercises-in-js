@@ -1,19 +1,19 @@
 // Write a program to print all the LEADERS in the array.
 // An element is leader if it is greater than all the elements to its right side.
-// The rightmost element is always a leader. 
+// The rightmost element is always a leader.
 // https://practice.geeksforgeeks.org/problems/leaders-in-an-array/0
 
 const leaders = (list) => {
     const leadersList = [];
 
-    for(let i = 0; i < list.length - 1; i++) {
+    for (let i = 0; i < list.length - 1; i += 1) {
         const current = list[i];
         const next = list[i + 1];
 
         if (current > next) {
             leadersList.push(current);
         } else {
-            for(let j = leadersList.length - 1; j >= 0; j--) {
+            for (let j = leadersList.length - 1; j >= 0; j -= 1) {
                 if (next > leadersList[j]) {
                     leadersList.splice(j, 1);
                 }
