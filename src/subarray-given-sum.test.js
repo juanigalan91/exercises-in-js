@@ -6,29 +6,29 @@ const subarrayGivenSum = (list, wantedSum) => {
     let start = 0;
     let indexes;
 
-    for(let i = 0; i < list.length + 1; i++) {
+    for (let i = 0; i < list.length + 1; i++) {
         // 1. 0 > 5 ? F
         // 2. 1 > 5 ? F
         // 3. 2 > 5 ? F
         // 4. 6 > ? T
-        while(sum > wantedSum) {
+        while (sum > wantedSum) {
             // 4. sum = 6 - 1 = 5, start = 1
-            sum = sum - list[start];
+            sum -= list[start];
             start++;
         }
 
         if (sum === wantedSum) {
             indexes = {
-                start: start,
+                start,
                 finish: i - 1
-            }
+            };
             break;
         }
 
         // 1. sum = 1, start = 0
         // 2. sum = 2, start = 0
         // 3. sum = 6, start = 0
-        sum = sum + list[i];
+        sum += list[i];
     }
 
     return indexes;
