@@ -6,17 +6,17 @@ const equilibriumPoint = (list) => {
     let leftSum = 0;
     let equilibrium;
 
-    for(let i = 0; i < list.length; i++) {
+    for (let i = 0; i < list.length; i += 1) {
         let rightSum = 0;
-        for(let j = i + 1; j < list.length; j++) {
-            rightSum = rightSum + list[j];
+        for (let j = i + 1; j < list.length; j += 1) {
+            rightSum += list[j];
         }
 
-        if(rightSum === leftSum){
-            equilibrium = i;;
+        if (rightSum === leftSum) {
+            equilibrium = i;
             break;
         } else {
-            leftSum = leftSum + list[i];
+            leftSum += list[i];
         }
     }
 
@@ -29,6 +29,6 @@ describe('Equilibrium', () => {
         const firstTest = [1, 3, 5, 2, 2];
         const result = equilibriumPoint(firstTest);
 
-        expect(result).toBe(2)
+        expect(result).toBe(2);
     });
 });

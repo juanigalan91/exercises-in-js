@@ -6,9 +6,9 @@ const maxContigousArray = (list) => {
     let currentSum = list[0];
     let maxSum = list[0];
 
-    for(let i = 1; i < list.length; i++) {
-        let sum = currentSum + list[i];
-        let max = Math.max(sum, list[i]);
+    for (let i = 1; i < list.length; i += 1) {
+        const sum = currentSum + list[i];
+        const max = Math.max(sum, list[i]);
 
         if (max > currentSum) {
             currentSum = max;

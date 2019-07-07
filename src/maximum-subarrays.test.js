@@ -5,7 +5,7 @@ const maximumSubarrays = (list, size) => {
     const maximums = [];
     let maximum = list[0];
 
-    for(let i = 0; i < list.length; i++) {
+    for (let i = 0; i < list.length; i += 1) {
         const item = list[i];
 
         if (item > maximum) {
@@ -25,7 +25,7 @@ describe('Maximum Subarrays', () => {
         const firstTest = [1, 2, 3, 5];
         const result = maximumSubarrays(firstTest, 3);
 
-        expect(result).toEqual([3,5]);
+        expect(result).toEqual([3, 5]);
     });
 
     it('test 2', () => {
