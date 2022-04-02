@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: -10vw;
+                visibility: hidden;
+            }
+
+            to {
+                margin-left: 0;
+                visibility: visible;
+            }
+        }
+
+        @keyframes slideout {
+            from {
+                margin-left: 0;
+                visibility: visible;
+            }
+
+            to {
+                margin-left: -10vw;
+                visibility: hidden;
+            }
+        }
+
+        .side-bar {
+            background-color: black;
+            color: white;
+            width: 10vw;
+            position: fixed;
+            visibility: hidden;
+        }
+
+        .side-bar--closed {
+            margin-left: -10vw;
+            animation-duration: 0.5s;
+            animation-name: slideout;
+            visibility: hidden;
+        }
+
+        .side-bar--open {
+            margin-left: 0;
+            animation-duration: 0.5s;
+            animation-name: slidein;
+            visibility: visible;
+        }
+
+        .side-bar__button {
+            position: absolute;
+            right: 8px;
+        }
+    </style>
+    <script>
+        const toggleMenu = () => {
+            const sideBar = document.querySelector('.side-bar');
+
+            if (sideBar) {
+                if (sideBar.classList.contains('side-bar--open')) {
+                    sideBar.classList.remove('side-bar--open');
+                    sideBar.classList.add('side-bar--closed');
+                } else {
+                    sideBar.classList.add('side-bar--open');
+                    sideBar.classList.remove('side-bar--closed');
+                }
+            }
+        };
+    </script>
+</head>
+<header>
+    <button class="side-bar__button" onclick="toggleMenu()">Menu</button>
+    <div class="side-bar">
+        <nav>
+            <button onclick="toggleMenu()">X</button>
+            <ul>
+                <li>
+                    Home
+                </li>
+                <li>
+                    About
+                </li>
+                <li>
+                    Work
+                </li>
+                <li>
+                    Contact
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+
+</main>
+
+</html>
