@@ -5,6 +5,7 @@ module.exports = {
     },
     "rules": {
         "react/jsx-filename-extension": "off",
+        "no-plusplus": "off",
         "react/prefer-stateless-function":"off",
         "no-param-reassign": ["error", { "props": false }],
         "class-methods-use-this": "off",
